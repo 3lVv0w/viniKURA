@@ -1,0 +1,16 @@
+<div class="container">
+  <div id="<%= @product.id %>">
+  <div id="product-image">
+  <% @product.images.each do |img| %>
+    <%= image_tag img.thumb.url %>
+  <% end %>
+  </div>
+  <div id="product-list">
+    <% @product.tag_list.split(",").each do |tag| %>
+      <div>
+        <%= tag %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Continue Adding New Product", new_product_path %>
+</div>
